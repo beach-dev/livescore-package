@@ -1,3 +1,18 @@
+# How to publish to github registry
+
+1. Create `.npmrc` file
+2. Generate github personal access token
+3. Add this to your `.npmrc` file:
+    ```
+    registry=https://registry.npmjs.org/
+    @fairytale-magic-oy:registry=https://npm.pkg.github.com/
+    //npm.pkg.github.com/:_authToken=your_token_here_from_step_2
+    ```
+4. Run `npm publish`
+
+
+
+
 # TSDX React User Guide
 
 Congrats! You just saved yourself hours of work by bootstrapping this project with TSDX. Let’s get you oriented with what’s here and how to use it.
