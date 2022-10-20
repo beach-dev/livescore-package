@@ -2,7 +2,7 @@ import * as React from "react";
 import {useEffect, useCallback} from "react";
 import {useThrottledCallback} from "use-debounce";
 
-type UpdaterProps = { isLoading: boolean; loadData: () => void };
+export type UpdaterProps = { isLoading: boolean; loadData: () => void };
 
 /**
  * @method updater

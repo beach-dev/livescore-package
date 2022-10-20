@@ -28,19 +28,7 @@ const LivescoreCard: React.FC<LivescoreCardProps> = ({ event }) => {
    * @param data The event data
    * @param team home || away
    **/
-  const getPoint = useCallback((data: any, team: any) => {
-    if (isEmpty(data.home_score) && isEmpty(data.away_score)) {
-      return 0;
-    }
-
-    if (data.status === "inprogress") {
-      return team === "home" ? data.home_score.point : data.away_score.point;
-    } else {
-      return team === "home"
-        ? data.home_score.display
-        : data.away_score.display;
-    }
-  }, []);
+  
 
   return (
     <LivescoreWrapper>
@@ -68,26 +56,7 @@ const LivescoreCard: React.FC<LivescoreCardProps> = ({ event }) => {
           <StatusItem status={event.status} />
         </Hidden>
       </Row>
-      <ScoreInfoWrapper>
-        <TeamScore
-          score={event?.home_score}
-          team={event?.home_team}
-          first_supply={
-            event.status === "inprogress" && event.first_supply === 1
-          }
-          winner_code={event.winner_code === 1}
-          totalScore={getPoint(event, "home")}
-        />
-        <TeamScore
-          score={event?.away_score}
-          team={event?.away_team}
-          first_supply={
-            event.status === "inprogress" && event.first_supply === 2
-          }
-          winner_code={event.winner_code === 2}
-          totalScore={getPoint(event, "away")}
-        />
-      </ScoreInfoWrapper>
+      <ScoreInfo event={event} />
     </LivescoreWrapper>
   );
 };
@@ -112,4 +81,44 @@ const StatusItem: React.FC<StatusItemPropsType> = ({ status }) => {
     </StatusWrapper>
   );
 };
+
+export const ScoreInfo: React.FC<LivescoreCardProps> = ({ event }) => {
+  const getPoint = useCallback((data: any, team: any) => {
+    if (isEmpty(data.home_score) && isEmpty(data.away_score)) {
+      return 0;
+    }
+
+    if (data.status === "inprogress") {
+      return team === "home" ? data.home_score.point : data.away_score.point;
+    } else {
+      return team === "home"
+        ? data.home_score.display
+        : data.away_score.display;
+    }
+  }, []);
+
+  return (
+    <ScoreInfoWrapper>
+        <TeamScore
+          score={event?.home_score}
+          team={event?.home_team}
+          first_supply={
+            event.status === "inprogress" && event.first_supply === 1
+          }
+          winner_code={event.winner_code === 1}
+          totalScore={getPoint(event, "home")}
+        />
+        <TeamScore
+          score={event?.away_score}
+          team={event?.away_team}
+          first_supply={
+            event.status === "inprogress" && event.first_supply === 2
+          }
+          winner_code={event.winner_code === 2}
+          totalScore={getPoint(event, "away")}
+        />
+      </ScoreInfoWrapper>
+  )
+}
+
 export default LivescoreCard;

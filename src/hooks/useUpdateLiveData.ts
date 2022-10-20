@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { isEmpty } from "../utils/helper-validation";
 
-const useUpdateLiveData = (events: any) => {
+export const useUpdateLiveData = (events: any) => {
   const [updatedEvents, setUpdatedEvents] = useState<any>([]); // updated event data
   const [searchedList, setSearchedList] = useState<any>([]); // searched data to avoid double check
 

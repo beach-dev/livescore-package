@@ -5,7 +5,7 @@ import { isEmpty } from "../utils/helper-validation";
 import config from "../config";
 import useGetType from "./useGetType";
 
-const useEventDataFromRapid = () => {
+export const useEventDataFromRapid = () => {
   const apiUrl = "https://api.clubapp.fi"; // The api url to get the finish double player names
 
   const [eventData, setEventData] = useState<any>([]); // The data of events, fetched by rapid api
