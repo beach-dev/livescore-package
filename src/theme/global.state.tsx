@@ -111,6 +111,9 @@ export const GlobalStyle = createGlobalStyle(({ theme }) =>
     sup: {
       top: "-0.5em",
     },
+    sub: {
+      bottom: "-0.25em",
+    },
     "sub,sup": {
       position: "relative",
       fontSize: "75%",
