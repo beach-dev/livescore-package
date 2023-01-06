@@ -23,7 +23,6 @@ export default function LiveScoreView() {
           <ClipLoader color="#78e9f4" size={30} />
         </LoaderWrapper>
       )}
-      <LiveScoreTitle>Liveseuranta</LiveScoreTitle>
 
       <Row flexDirection="column" gap={20}>
         {updatedEvents.map((_item: any, _index: number) => {

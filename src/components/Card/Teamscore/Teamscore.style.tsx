@@ -33,7 +33,7 @@ export const ScoreTable = styled.div`
     grid-template-columns: repeat(auto-fill, minmax(20px, 1fr));
   }
   .total {
-    background: #dedede;
+    background: rgb(235, 241, 255);
   }
 `;
 
