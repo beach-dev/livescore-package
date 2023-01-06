@@ -77,6 +77,7 @@ const TeamScore: React.FC<TeamScorePropsType> = ({
         padding="0  10px 0 0"
         fWeight={winner_code ? 700 : 400}
         responsive={{ 350: { fSize: 12 } }}
+        fSize={15}
       >
         {team.name?.split("/")[0].trim()}
         {team.name?.includes("/") && ", "}

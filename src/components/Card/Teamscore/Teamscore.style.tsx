@@ -25,7 +25,7 @@ export const ScoreTable = styled.div`
   text-align: center;
   @media screen and (max-width: 390px) {
     width: 50%;
-    font-size: 14px;
+    font-size: 13px;
   }
   @media screen and (max-width: 360px) {
     width: 45%;
