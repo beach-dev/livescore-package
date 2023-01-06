@@ -1,11 +1,7 @@
 import styled from "styled-components";
 
 export const LiveScoreViewWrapper = styled.div`
-  margin: 20px;
   position: relative;
-  @media screen and (max-width: 425px) {
-    padding: 10px;
-  }
 `;
 export const LiveScoreTitle = styled.p`
   font-size: 24px;
