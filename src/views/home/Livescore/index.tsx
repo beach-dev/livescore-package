@@ -6,7 +6,6 @@ import useEventDataFromRapid from "../../../hooks/useEventDataFromRapid";
 import useUpdateLiveData from "../../../hooks/useUpdateLiveData";
 import {
   LiveScoreViewWrapper,
-  LiveScoreTitle,
   LoaderWrapper,
 } from "./LiveScoreView.style";
 import Updater from "../Updater";
